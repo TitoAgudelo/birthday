@@ -19,18 +19,24 @@ img {
 }
 
 .ui-datepicker {
-    position: absolute;
-    top: 28px;
-    left: 0;
-    z-index: 1;
     width: 17em;
     background-color: white;
-    border-radius: 5px;
     padding: 3px;
+    margin: 0;
+}
+
+.ui-birthday {
+    background-color: #499E97;
+    color: white;
+    font-size: 12px;
+    margin-top: 1rem;
+    padding: 10px 5px;
+    width: 270px;
 }
 
 .datepicker-header {
-    background: linear-gradient(to bottom, #ffffff 0%,#eeeeee 17%,#cccccc 100%);
+    border-bottom: 1px solid #cccccc;
+    background-color: #56A7BC;
     color: #222222;
     font-weight: bold;
     min-height: 40px;
@@ -105,9 +111,9 @@ img {
 }
 
 .day.selected {
-    border: 1px solid #fcefa1;
-    background-color: #fbf9ee;
-    color: #363636;
+    border: 1px solid #56A7BC;
+    background-color: #54A5A0;
+    color: white;
 }
 
 .empty-day {

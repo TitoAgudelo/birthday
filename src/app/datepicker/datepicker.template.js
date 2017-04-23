@@ -7,11 +7,11 @@ const weekdaysNum = [1, 2, 3, 4, 5]
 const weekendsNum = [0, 6]
 
 export default ({ selectedYear, selectedMonth, selectedDay, selectedDate, inputDate, emptyDays, closed }) => {
-  const isDayLessThanToday = day => new Date(selectedYear, selectedMonth, day + 1).getTime() < new Date().getTime()
+  const isDayMoreThanToday = day => new Date(selectedYear, selectedMonth, day).getTime() > new Date().getTime()
   const isLeapYear = () => !!(selectedMonth === 1 && ((selectedYear % 4 === 0) && (selectedYear % 100 !== 0)) || (selectedYear % 400 === 0))
 
   return `
-    <input id="inputDate" type="text" readonly value="${inputDate}" placeholder="Choose a date..."><img src="assets/ic_date_range.svg">
+    <!--<input id="inputDate" type="text" readonly value="${inputDate}" placeholder="Choose a date..."><img src="assets/ic_date_range.svg">-->
     <div class="ui-datepicker" ${closed ? 'hidden' : ''}>
       <div class="datepicker-header">
         <button id="prevMonth"><img src="/assets/ic_navigate_before.svg"></button>
@@ -29,11 +29,15 @@ export default ({ selectedYear, selectedMonth, selectedDay, selectedDate, inputD
       `).join('')}
 
       ${range(isLeapYear() ? 29 : daysInMonth[selectedMonth]).map(day => `
-        <button class="day ${parseInt(selectedDay) === day && selectedDate.getMonth() === selectedMonth && selectedDate.getFullYear() === selectedYear ? 'selected' : ''}">
+        <button class="day ${parseInt(selectedDay) === day && selectedDate.getMonth() === selectedMonth && selectedDate.getFullYear() === selectedYear ? 'selected' : ''}"
+          ${isDayMoreThanToday(day) ? 'disabled' : ''}>
           ${day}
         </button>
       `).join('')}
       </div>
+    </div>
+    <div class="ui-birthday">
+      <app-birthday date="${selectedDate}"></app-birthday>
     </div>
   `
 }

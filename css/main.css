@@ -5,6 +5,17 @@ body {
   background-color: #A6D3CE; }
 
 .app-container {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  margin-top: 4rem; }
+  .app-container .datepicker-container {
+    background-color: white;
+    padding: 2rem;
+    text-align: center; }
+    .app-container .datepicker-container h1 {
+      color: #499E97; }
+    .app-container .datepicker-container app-datepicker {
+      display: inline-block;
+      margin: 0 auto;
+      max-width: 100%; }

@@ -47,7 +47,7 @@ export class DatepickerComponent extends HTMLElement {
     this.element.querySelectorAll('.day').forEach(element => element.addEventListener('click', () => this.selectDate(element.textContent)))
     this.element.querySelector('#nextMonth').addEventListener('click', () => this.nextMonth())
     this.element.querySelector('#prevMonth').addEventListener('click', () => this.prevMonth())
-    this.element.querySelector('#inputDate').addEventListener('click', () => this.toggleDatepicker())
+    //this.element.querySelector('#inputDate').addEventListener('click', () => this.toggleDatepicker())
   }
 
   nextMonth () {
@@ -111,7 +111,6 @@ export class DatepickerComponent extends HTMLElement {
     this.selectedDay = parseInt(day)
     this.selectDateOnCalendar = this.selectedDate
     this.inputDate = this.selectedDate.toLocaleDateString()
-    this.dispatchEvent(new CustomEvent('selected-date', { detail: this.selectDateOnCalendar }))
-    this.close()
+    this.attributeChangedCallback()
   }
 }
