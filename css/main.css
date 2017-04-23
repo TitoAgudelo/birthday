@@ -1,0 +1,10 @@
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  background-color: #A6D3CE; }
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
