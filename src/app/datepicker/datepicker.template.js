@@ -14,9 +14,9 @@ export default ({ selectedYear, selectedMonth, selectedDay, selectedDate, inputD
     <!--<input id="inputDate" type="text" readonly value="${inputDate}" placeholder="Choose a date..."><img src="assets/ic_date_range.svg">-->
     <div class="ui-datepicker" ${closed ? 'hidden' : ''}>
       <div class="datepicker-header">
-        <button id="prevMonth"><img src="/assets/ic_navigate_before.svg"></button>
+        <button id="prevMonth"><</button>
         <h5>${months[selectedMonth]} ${selectedYear}</h5>
-        <button id="nextMonth"><img src="/assets/ic_navigate_next.svg"></button>
+        <button id="nextMonth">></button>
       </div>
       <ul class="datepicker-nav">
         ${weekdays.map(day => `
